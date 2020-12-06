@@ -1,0 +1,17 @@
+# php:5.3, mysql:5.5, phpmyadmin:4.7
+# constroi container com php mais apache, mysql e phpmyadmin configurado com senha
+version: "2"
+services:
+  mysql:
+    image: mysql:5.5
+    container_name: my_db_mysql_5
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/db/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=docker
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=docker
+      - MYSQL_DATABASE=test_products
