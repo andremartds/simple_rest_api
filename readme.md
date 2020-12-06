@@ -1,10 +1,10 @@
 ## Api simples e pura em php
 
-<p> .execute o compose docker </p>
+<p> Execute o compose docker </p>
 
 ``` docker-compose up ```
 
-<p> .execute o composer </p>
+<p> Execute o composer </p>
 
 ``` composer dump-autoload ```
 
