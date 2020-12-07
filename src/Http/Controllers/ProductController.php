@@ -39,11 +39,10 @@ class ProductController implements Controller
     }
     die();
   }
-  
+
   public function delete($id)
   {
-    // $product = dao->selectProduct($id);
-    var_dump($id);
+    ProductDao::delete($id);
     die();
   }
 }

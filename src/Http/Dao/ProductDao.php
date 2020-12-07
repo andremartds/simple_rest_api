@@ -36,10 +36,26 @@ class ProductDao
     $insert->execute();
   }
 
-  public function delete($id)
+  public static function delete($id)
   {
+    self::select($id);
     $stmt = PDOUtil::getStance()->prepare("DELETE FROM products where id=:id");
     $stmt->bindValue(":id", $id);
+    $stmt->execute();
     return $stmt;
+  }
+
+  public static function select($id)
+  {
+    $consulta = PDOUtil::getStance()->prepare("SELECT * FROM products where id=:id");
+    $consulta->bindValue(":id", $id);
+    $consulta->execute();
+    $product = $consulta->fetch(PDO::FETCH_OBJ);
+    if (isset($product->id)) {
+      return $product;
+    } else {
+      echo json_encode('id does not was found');
+      die();
+    }
   }
 }
