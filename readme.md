@@ -30,5 +30,3 @@ importe em seu Insomnia o arquivo ``` Insomnia_2020-12-06.json ``` para executar
 
 ``` src/config/RouteInstanceObject ``` arquivo que gerencia a instancia de um controller, utilizamos reflection para isso ele tem a habilidade de delegar para qual controller a request será encaminhada.
 
-<p> não é utilizado try/cath isso é intencional </p>
-
